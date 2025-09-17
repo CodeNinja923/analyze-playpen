@@ -3,6 +3,7 @@ import { Upload, File, X, CheckCircle } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { DataPreview } from '@/components/DataPreview';
 
 interface UploadedFile {
   id: string;
@@ -176,6 +177,21 @@ export function FileUploadZone() {
             ))}
           </div>
         </Card>
+      )}
+
+      {/* Data Preview Section */}
+      {files.some(file => file.status === 'completed') && (
+        <div className="space-y-4">
+          {files
+            .filter(file => file.status === 'completed')
+            .map((file) => (
+              <DataPreview 
+                key={file.id}
+                fileName={file.name}
+                fileType={file.type}
+              />
+            ))}
+        </div>
       )}
     </div>
   );

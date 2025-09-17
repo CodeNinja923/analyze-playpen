@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationBar } from '@/components/NavigationBar';
 import { FileUploadZone } from '@/components/FileUploadZone';
 import { PreprocessingPanel } from '@/components/PreprocessingPanel';
+import { SaaSGuide } from '@/components/SaaSGuide';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -135,6 +136,7 @@ export default function Dashboard() {
 
           {/* Right Column - Preprocessing Panel */}
           <div className="space-y-6">
+            <SaaSGuide />
             <PreprocessingPanel />
             
             {/* Recent Activity */}
