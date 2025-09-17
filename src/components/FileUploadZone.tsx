@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { DataPreview } from '@/components/DataPreview';
+import { FileMerger } from '@/components/FileMerger';
 
 interface UploadedFile {
   id: string;
@@ -177,6 +178,11 @@ export function FileUploadZone() {
             ))}
           </div>
         </Card>
+      )}
+
+      {/* File Merger Section */}
+      {files.filter(file => file.status === 'completed').length >= 2 && (
+        <FileMerger files={files} />
       )}
 
       {/* Data Preview Section */}
